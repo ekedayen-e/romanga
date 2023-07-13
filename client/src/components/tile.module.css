@@ -1,0 +1,17 @@
+.hovertext {
+    position: relative;
+  }
+  
+  .hovertext:before {
+    content: attr(data-hover);
+    visibility: visible;
+    opacity: 1;
+    width: 5rem;
+    color: red;
+    margin-top: 50%;
+    margin-left: 25%;
+    transition: opacity 1s ease-in-out;
+    position: absolute;
+    z-index: 1;
+
+  }
