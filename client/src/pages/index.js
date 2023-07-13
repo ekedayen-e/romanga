@@ -13,8 +13,8 @@ export async function getServerSideProps() {
   let response;
   let news;
   try {
-    response = await fetch('http://localhost:3001/api/top')
-    news = await fetch('http://localhost:3001/api/news')
+    response = await fetch('https://romanga-backend.onrender.com/api/top')
+    news = await fetch('https://romanga-backend.onrender.com/api/news')
 
   } catch(error) {
     return;

@@ -9,7 +9,7 @@ import { comment } from 'postcss'
 
 export async function getServerSideProps(context) {
   const id = context.params.id
-  let response = await fetch(`http://localhost:3001/api/get/${id}`)
+  let response = await fetch(`https://romanga-backend.onrender.com/api/get/${id}`)
   const manga = await response.json()
 
   return {

@@ -14,7 +14,7 @@ const SearchBar = ({setSearch}) => {
             router.push('/')
             return;
         }
-        let response = await fetch(`http://localhost:3001/api/search?show=${input}`)
+        let response = await fetch(`https://romanga-backend.onrender.com/api/search?show=${input}`)
         let data = await response.json();
         setSearch(data)
         router.push('/')
