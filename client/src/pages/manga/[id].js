@@ -37,7 +37,7 @@ const MangaPage = ({manga}) => {
         result.ratings.map(rating => rating.title == manga.title.default && setRating(rating.score))
       }
       if(result && result.likes) {
-        result.likes.map(entry => entry == manga.title.default && setLike(true))
+        result.likes.map(entry => entry.title == manga.title.default && setLike(true))
       } else {
         null;
       }
@@ -100,12 +100,12 @@ const MangaPage = ({manga}) => {
     const docRef = doc(db, "meta", currentUser.uid);
     const docSnap = await getDoc(docRef);
     if(like) {
-      await updateDoc(docRef, {likes: arrayRemove(manga.title.default)})
+      await updateDoc(docRef, {likes: arrayRemove({title:manga.title.default, id: manga.id, image:manga.image.jpg.default})})
     } else {
       if(docSnap.exists()) {
-        await updateDoc(docRef, {likes: arrayUnion(manga.title.default)})
+        await updateDoc(docRef, {likes: arrayUnion({title:manga.title.default, id: manga.id, image:manga.image.jpg.default})})
     } else {
-        await setDoc(docRef, {likes: arrayUnion(manga.title.default)})
+        await setDoc(docRef, {likes: arrayUnion({title:manga.title.default, id: manga.id, image:manga.image.jpg.default})})
     }
     }
   }

@@ -25,9 +25,10 @@ const Modal = (props) => {
         </div>
         <div className='p-4 flex flex-col gap-3'>
             {currentUser && <h2 onClick={() => {setOpenModal(false); router.push('/settings')}} className='select-none duration-300 hover:pl-2 cursor-pointer'><i class="mx-1 fa-solid fa-gear"></i>Settings</h2>}
+            {!currentUser && <h2 onClick={() => {setOpenModal(false); router.push('/login')}} className='select-none duration-300 hover:pl-2 cursor-pointer'><i class="mx-1 fa-solid fa-right-from-bracket"></i>Login/Register</h2>}
             <h2 onClick={() => {setOpenModal(false); router.push('/reset')}} className='select-none duration-300 hover:pl-2 cursor-pointer'><i class="mx-1 fa-sharp fa-solid fa-unlock"></i>Reset Password</h2>
-            {currentUser && <h2 onClick={() => {logout(); setOpenModal(false); router.push('/')}} className='select-none duration-300 hover:pl-2 cursor-pointer'><i class="mx-1 fa-solid fa-right-from-bracket"></i>Logout</h2>}
-            {/*!currentUser && <h2 onClick={() => {setOpenModal(false); router.push('/login')}} className='select-none duration-300 hover:pl-2 cursor-pointer'><i class="mx-1 fa-solid fa-right-from-bracket"></i>Login/Register</h2>*/}
+            {currentUser && <h2 id='logout' onClick={() => {logout(); setOpenModal(false); router.push('/'); router.reload()}} className='select-none duration-300 hover:pl-2 cursor-pointer'><i class="mx-1 fa-solid fa-right-from-bracket"></i>Logout</h2>}
+            
         </div>
     </div>, _document.getElementById('portal')
   )
