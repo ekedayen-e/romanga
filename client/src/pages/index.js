@@ -12,19 +12,11 @@ const inter = Inter({ subsets: ['latin'] })
 export async function getServerSideProps() {
   let response;
   let news;
-  try {
-    response = await fetch('https://romanga-backend.onrender.com/api/top')
-    news = await fetch('https://romanga-backend.onrender.com/api/news')
-
-  } catch(error) {
-    return;
-  }
-
-  const topManga = await response.json()
-  const randNews = await news.json()
-
+    response = await fetch('https://romanga-backend.onrender.com/api/top').then(response => response.json())
+    news = await fetch('https://romanga-backend.onrender.com/api/news').then(response => response.json())
+    
   return {
-    props: {topManga, randNews}
+    props: {topManga: response, randNews: news}
   };
 }
 

@@ -12,9 +12,7 @@ app.use('/api', routes)
 app.use(express.static('public'))
 */
 
-app.get('/', async(req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'index.html'))
-})
+
 app.get('*', async (req, res) => {
     res.status(400).send("Route not available")
 })
