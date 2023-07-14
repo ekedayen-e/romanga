@@ -23,6 +23,7 @@ const Login = () => {
                 return;
             }
             router.push('/')
+            return;
         }
         try { 
             await signup(email,password)
@@ -31,6 +32,7 @@ const Login = () => {
             return;
         }
         router.push('/')
+        return;
     }
 
   return (
