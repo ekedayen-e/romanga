@@ -7,7 +7,7 @@ const Newsbar = ({news}) => {
         <div className='w-full lg:py-2 lg:p-5 grid grid-cols-1 gap-y-5'>
             {news.map((article) => {
                 return (
-                  <div>
+                  <div key={article.title}>
                     <a className='hover:underline' target='_blank' href={article.url}>{article.title}</a>
                   </div>  
                 )

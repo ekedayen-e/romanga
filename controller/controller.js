@@ -19,10 +19,16 @@ exports.get = async(req, res) => {
     res.send(result)
 }
 
-exports.news = async(req, res) => {
+exports.gnews = async(req, res) => {
     let manga = await client.manga.listTop({filter: "favorite", type: "manga"}, null, 1);
     let id = manga[0].id
     let news = await client.manga.getNews(id)
     res.send(news)
 
+}
+
+exports.news = async(req, res) => {
+    const id = req.params.id
+    let news = await client.manga.getNews(id)
+    res.send(news)
 }

@@ -23,7 +23,7 @@ const SearchBar = ({setSearch}) => {
     
   return (
     <form onSubmit={submit} className='flex w-full justify-center items-center gap-x-2'>
-        <i class="select-none duration-300 hover:scale-110 text-md lg:text-2xl fa-solid fa-magnifying-glass"></i>
+        <i className="select-none duration-300 hover:scale-110 text-md lg:text-2xl fa-solid fa-magnifying-glass"></i>
         <input className='outline-none w-full text-black dark:text-rose-500 bg-gray-300 dark:bg-gray-900 max-w-[60ch] text-md lg:text-lg rounded-xl p-3' value={input} onChange={e => setInput(e.target.value)} type='search' />
     </form>
   )
