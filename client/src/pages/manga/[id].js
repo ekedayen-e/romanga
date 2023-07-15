@@ -138,7 +138,7 @@ const MangaPage = ({manga, news}) => {
 
       <div className='overflow-auto absolute bg-opacity-1 bg-gray-900 backdrop-blur-md bg-opacity-70 top-0 w-full h-full flex flex-col gap-y-10 justify-start items-center'>
 
-      <div className='absolute top-20 p-2 md:p-3 lg:p-5 right-0 bg-white text-black border-white dark:text-red-500 dark:bg-black'>
+      <div className='absolute top-24 p-2 md:p-3 lg:p-5 right-0 bg-white text-black border-white dark:text-red-500 dark:bg-black'>
         <p>{'Rank #' + manga.rank}</p>
       </div>
 
