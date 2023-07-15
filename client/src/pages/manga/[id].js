@@ -10,7 +10,7 @@ import Newsbar from '@/components/Newsbar'
 export async function getServerSideProps(context) {
   const id = context.params.id
   let response = await fetch(`https://romanga-backend.onrender.com/api/get/${id}`)
-  let other = await fetch(`http://localhost:3001/api/news/${id}`)
+  let other = await fetch(`https://romanga-backend.onrender.com/api/news/${id}`)
   const manga = await response.json()
   const news = await other.json()
 
