@@ -8,7 +8,6 @@ import { useAuth } from '@/context/AuthProvider'
 import Newsbar from '@/components/Newsbar'
 import {getDoc, doc, } from 'firebase/firestore'
 import { db } from '../../firebase'
-import { requestToBodyStream } from 'next/dist/server/body-streams'
 
 const inter = Inter({ subsets: ['latin'] })
 
