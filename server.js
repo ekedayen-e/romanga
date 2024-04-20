@@ -14,7 +14,7 @@ app.use(express.static('public'))
 
 
 app.get('*', async (req, res) => {
-    res.status(400).send("Route not available")
+    res.status(400).send("Welcome to Romanga")
 })
 
 
